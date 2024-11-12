@@ -1,0 +1,2 @@
+# HAL vendor_duy_hvac
+/vendor/bin/hw/vendor.duy.hvac-service u:object_r:vendor_duy_hvac_exec:s0

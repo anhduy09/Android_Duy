@@ -1,0 +1,16 @@
+aidl_interface {
+    name: "vendor.duy.hvac",
+    owner: "duy09",
+    vendor: true,
+    srcs: [ "vendor/duy/hvac/*.aidl" ],
+    stability: "vintf",
+    backend: {
+        java: {
+            enabled: false,
+            sdk_version: "module_current",
+        },
+        ndk: {
+            enabled: true,
+        },
+    },
+}

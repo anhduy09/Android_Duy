@@ -1,0 +1,8 @@
+<manifest version="1.0" type="device">
+    <hal format="aidl">
+        <!-- HAL interface name -->
+        <name>vendor.duy.hvac</name>
+        <version>1</version>
+        <fqname>vendor.duy.hvac.ITemperature/default</fqname>
+    </hal>
+</manifest>

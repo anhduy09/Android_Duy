@@ -1,0 +1,9 @@
+service vendor.duy.hvac-service /vendor/bin/hw/vendor.duy.hvac-service
+	interface aidl vendor.duy.hvac.ITemperature/default
+	class hal
+	user system
+	group system
+	seclabel u:r:vendor_duy_hvac:s0    # SELinux label for the service
+
+on boot
+	mkdir /data/vendor/hvac 0775 system system

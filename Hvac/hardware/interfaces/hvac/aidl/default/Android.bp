@@ -1,0 +1,31 @@
+cc_binary {
+    name: "vendor.duy.hvac-service",
+    init_rc: ["vendor.duy.hvac-service.rc"], // Add init.rc for service startup
+    relative_install_path: "hw",  //specifies the relative directory path where the output (such as a binary or library) will be installed in /vendor/bin/hw/
+    vendor: true,                 // Specify this service is part of the vendor partition
+    vintf_fragments: ["vendor.duy.hvac-service.xml"],   //specify Vehicle Interface Definition (VINTF) fragments, which define the properties, interfaces, and services related to the HAL and its relationship with the Android system
+
+
+    srcs: [
+        "Temperature.cpp",        // Your service implementation in C++
+        "main.cpp",               // Other source files
+    ],
+
+    cflags: [                     // Compiler flags (adjust as needed)
+        "-Wall",
+        "-Werror",
+    ],            
+
+    shared_libs: [
+        "libutils",
+        "libbinder",
+        "libbinder_ndk",          // For AIDL services
+        "liblog",                 // Logging support
+        "libcutils",              // Common C utility functions
+        "libbase",                // Base Android libraries
+        "vendor.duy.hvac-V1-ndk_platform",
+        // Add other dependencies your service might need
+    ],
+    
+}
+

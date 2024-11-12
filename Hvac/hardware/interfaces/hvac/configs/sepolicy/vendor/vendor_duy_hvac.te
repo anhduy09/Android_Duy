@@ -1,0 +1,16 @@
+# Define the domain for the vendor.duy.hvac HAL
+type vendor_duy_hvac, domain;
+
+type vendor_duy_hvac_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(vendor_duy_hvac);
+
+# Allow interaction with hwservicemanager for registration
+hal_server_domain(vendor_duy_hvac, hal_vendor_duy_hvac_hwservice)
+
+# Find and communicate with hwservicemanager
+#binder_call(vendor_duy_hvac, hwservicemanager)
+#
+#hal_server_domain(vendor_duy_hvac, hal_vendor_duy_hvac)
+#
+#allow vendor_duy_hvac servicemanager:binder { call transfer };
