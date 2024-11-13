@@ -1,5 +1,5 @@
 # Define the domain for the vendor.duy.hvac HAL
-type vendor_duy_hvac, domain;
+type vendor_duy_hvac, domain, coredomain;
 
 type vendor_duy_hvac_exec, exec_type, file_type, vendor_file_type;
 
