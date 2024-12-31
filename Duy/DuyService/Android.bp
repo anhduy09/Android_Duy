@@ -4,7 +4,6 @@ aidl_interface {
     vendor_available: true,
     srcs: ["interfaces/**/*.aidl"],
     local_include_dir: "interfaces",
-    versions: ["1",],
     stability: "vintf",
     backend: {
         java: {
