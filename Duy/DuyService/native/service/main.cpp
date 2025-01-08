@@ -1,4 +1,4 @@
-#include "DuyService.hpp"
+#include "DuyService.h"
 #include <utils/Log.h>
 #include <iostream>
 #include <signal.h>
@@ -31,8 +31,8 @@ int main()
          }
          else
          {
-            int32_t version = -1;
-            esObj->getInterfaceVersion(&version);
+            int32_t version = 1;
+            // esObj->getInterfaceVersion(&version);
             ALOGI("%s:%d: service ready (registered version V%d)", __FUNCTION__, __LINE__, version);
             ABinderProcess_joinThreadPool();
          }

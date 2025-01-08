@@ -1,7 +1,7 @@
 aidl_interface {
     name: "duy.service.api",
     owner: "duy09",
-    vendor_available: true,
+    vendor_available: true, // can not use vendor: true due to issue: sdk_version: sdk_version must have a value when the module is located at vendor or product(only if PRODUCT_ENFORCE_PRODUCT_PARTITION_INTERFACE is set).
     srcs: ["interfaces/**/*.aidl"],
     local_include_dir: "interfaces",
     stability: "vintf",
@@ -19,3 +19,23 @@ aidl_interface {
     },
 }
 
+cc_binary {
+    name: "duy_service",
+    srcs: ["native/**/*.cpp"],
+    local_include_dirs: ["native/impl"],
+    vendor: true,
+    init_rc: ["duy_service_init.rc"],
+    shared_libs: [
+        "liblog",
+        "libutils",
+        "libbase",
+        "libbinder_ndk",
+        "duy.service.api-V1-ndk_platform",
+    ],
+    cflags: [
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wunused",
+    ],
+}

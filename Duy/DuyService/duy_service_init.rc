@@ -1,0 +1,7 @@
+service duy_service /vendor/hw/bin/duy_service
+	class hal
+	user system
+	group system
+
+on boot
+	start duy_service
