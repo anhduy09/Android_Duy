@@ -1,0 +1,43 @@
+
+Current architecture (as it stands NOW)
+MainActivity
+  ├─ RecyclerView (topics)
+  ├─ FAB (+ create topic)
+  └─ onTopicClick
+       ├─ insert TrackRecord
+       └─ open TopicSummaryDialogFragment
+
+TopicEditActivity
+  └─ create / rename topic
+
+TopicSummaryDialogFragment
+  ├─ query DB
+  ├─ show counts
+  └─ close
+
+StatsActivity
+  └─ (prepared but not fully wired yet)
+__________________________________________________________
+📌 Functional requirements
+
+	User must name a topic explicitly
+	
+	Touching a topic always creates a record
+	
+	A record = timestamped event
+	
+	Summary feedback is dialog-based, not Activity-based
+	
+	Statistics are computed from raw events
+
+📌 UX requirements
+
+	No default topic names
+	
+	No Activity stacking for simple actions
+	
+	Summary appears centered
+	
+	User manually dismisses summary
+	
+	Data is readable in dark mode

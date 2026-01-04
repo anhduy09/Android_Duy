@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">HabitTracker</string>
+    <string name="last_record">Last: %1$s</string>
+    <string name="last_record_none"><![CDATA[Last: --<]]></string>
+</resources>
